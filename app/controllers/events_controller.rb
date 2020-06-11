@@ -1,3 +1,5 @@
+require 'wikipedia'
+
 class EventsController < ApplicationController
   # add pundit
   def index
@@ -6,6 +8,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @page = Wikipedia.find( 'Getting Things Done' )
   end
 
   def new
