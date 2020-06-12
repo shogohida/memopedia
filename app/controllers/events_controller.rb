@@ -61,6 +61,11 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.save
+    # contentをニューヨーク・タイムズのリンクから取る
+    # need to use nokogiri
+    # シードも作る？
+    # keyword =.....
+    # "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=#{keyword}&api-key=KWwSqakiTpXxhKaIS8211GJYbEeKgWCZ"
   end
 
   private
