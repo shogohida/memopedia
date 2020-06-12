@@ -22,9 +22,9 @@ class EventsController < ApplicationController
     # @articles = Custodian::Article.find(:all, {:q => "Manchester City"})
 
     # news api
-    # n = News.new("3370e2330c5145c8beababe2e2110742")
-    # @top_headlines = n.get_top_headlines(sources: "the-verge")
-    # @everything = n.get_everything(q: "Trump")
+    n = News.new("3370e2330c5145c8beababe2e2110742")
+    @top_headlines = n.get_top_headlines(sources: "the-mainichi")
+    @everything = n.get_everything(q: "Trump")
     # /v2/top-headlines
     # @top_headlines = newsapi.get_top_headlines(
     #   q: 'bitcoin',
@@ -35,6 +35,8 @@ class EventsController < ApplicationController
     # )
     # # /v2/sources
     # @sources = newsapi.get_sources(country: 'us', language: 'en')
+
+    # contextualweb
     # key = "3a0c733a96msh49f67135f9663e3p17b6e3jsn79111f787948"
     # q = "Trump"; #the search query
     # @response = Unirest.get "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/spelling/AutoComplete?text=#{q}",

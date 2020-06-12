@@ -1,10 +1,16 @@
 <h1>Test</h1>
 <%= @event.name %>
-<%= @page.summary %>
+<%#= @page.summary %>
 <%#= @page.raw_data['continue']['elcontinue'] %>
 <%# raise %>
 <%#= @articles %>
-<%#= @top_headlines %>
+<ul>
+<% @top_headlines.each do |headline| %>
+  <li><%= headline.title %></li>
+  <li><%= headline.description %></li>
+  <li><%= headline.url %></li>
+<% end %>
+</ul>
 <!-- <ul>
   <%#= @everything.each do |news| %>
     <li><%#= news.url %></li>
