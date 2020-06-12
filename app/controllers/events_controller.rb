@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 
     # wikipedia
-    @page = Wikipedia.find('Michael Jordan')
+    @page = Wikipedia.find('River Plate')
 
     # guardian
     # Custodian.api_key = "d5f0086c-3ba2-4cbe-b39a-84ccdbc38e39"
