@@ -1,9 +1,9 @@
 require 'wikipedia'
-require 'rubygems'
-require 'custodian'
-require 'news-api'
-require "unirest"
-require "times_wire"
+# require 'rubygems'
+# require 'custodian'
+# require 'news-api'
+# require "unirest"
+# require "times_wire"
 
 class EventsController < ApplicationController
   # add pundit
@@ -13,13 +13,18 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+
+    # wikipedia
     @page = Wikipedia.find('Michael Jordan')
+
+    # guardian
     # Custodian.api_key = "d5f0086c-3ba2-4cbe-b39a-84ccdbc38e39"
     # @articles = Custodian::Article.find(:all, {:q => "Manchester City"})
 
-    n = News.new("3370e2330c5145c8beababe2e2110742")
-    @top_headlines = n.get_top_headlines(sources: "the-verge")
-    @everything = n.get_everything(q: "Trump")
+    # news api
+    # n = News.new("3370e2330c5145c8beababe2e2110742")
+    # @top_headlines = n.get_top_headlines(sources: "the-verge")
+    # @everything = n.get_everything(q: "Trump")
     # /v2/top-headlines
     # @top_headlines = newsapi.get_top_headlines(
     #   q: 'bitcoin',
@@ -28,25 +33,25 @@ class EventsController < ApplicationController
     #   language: 'en',
     #   country: 'us'
     # )
-
     # # /v2/sources
     # @sources = newsapi.get_sources(country: 'us', language: 'en')
-
-    key = "3a0c733a96msh49f67135f9663e3p17b6e3jsn79111f787948"
-    q = "Trump"; #the search query
-    @response = Unirest.get "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/spelling/AutoComplete?text=#{q}",
-    headers:{
-      "X-RapidAPI-Key": key
-    }
+    # key = "3a0c733a96msh49f67135f9663e3p17b6e3jsn79111f787948"
+    # q = "Trump"; #the search query
+    # @response = Unirest.get "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/spelling/AutoComplete?text=#{q}",
+    # headers:{
+    #   "X-RapidAPI-Key": key
+    # }
     # end
 
-    TimesWire::Base.api_key = "KWwSqakiTpXxhKaIS8211GJYbEeKgWCZ"
+    # nytimes
+    # TimesWire::Base.api_key = "KWwSqakiTpXxhKaIS8211GJYbEeKgWCZ"
     # @item = Item.url("http://www.nytimes.com/2013/05/04/business/economy/us-adds-165000-jobs-in-april.html")
     # @items = Item.latest('nyt')
     # @sections = Section.all
-
     # need to use nokogiri
     # "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=KWwSqakiTpXxhKaIS8211GJYbEeKgWCZ"
+
+    # FT times
   end
 
   def new
