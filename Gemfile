@@ -34,6 +34,10 @@ gem 'wikipedia-client'
 gem 'pundit'
 gem 'ice_cube'
 gem "simple_calendar", "~> 2.0"
+gem "custodian"
+gem "news-api"
+gem "unirest"
+gem "times_wire"
 
 group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'

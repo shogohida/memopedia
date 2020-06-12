@@ -1,3 +1,15 @@
 <h1>Test</h1>
 <%= @event.name %>
-<%= @page.summary %>
+<%#= @page.raw_data['continue']['elcontinue'] %>
+<%# raise %>
+<%#= @articles %>
+<%#= @top_headlines %>
+<ul>
+  <%= @everything.each do |news| %>
+    <li><%= news.url %></li>
+  <% end %>
+</ul>
+<%= @response %>
+<%# raise %>
+<%= @items %>
+<%#= @sections %>
